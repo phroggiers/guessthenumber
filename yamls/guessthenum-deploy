@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guessthenumber-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: guessthenumber
+  template:
+    metadata:
+      labels:
+        app: guessthenumber
+    spec:
+      containers:
+      - name: guessthenumber
+        image: phroggiers/guess-the-number:latest # Replace this with your actual Docker image
+        ports:
+        - containerPort: 8000
+        # Add a readiness probe to check if the app is ready
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        # Add a liveness probe to check if the app is running
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20
