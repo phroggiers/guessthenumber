@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: click-py
+  name: guessthenumber-py
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -11,10 +11,10 @@ spec:
   template:
     metadata:
       labels:
-        app: click-py
+        app: guessthenumber-py
     spec:
       containers:
-        - name: click-py
+        - name: guessthenumber-py
           image: python:latest
           ports:
             - containerPort: 80
