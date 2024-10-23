@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: guessthenumber
-        image: phroggiers/guessthenumberv2:latest # Replace this with your actual Docker image
+        image: phroggiers/guessthenumberv3:latest # Replace this with your actual Docker image
         ports:
         - containerPort: 8000
         # Add a readiness probe to check if the app is ready
