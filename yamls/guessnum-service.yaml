@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: click-py-service
+  name: guess-the-number-py-service
 spec:
   ports:
   - port: 80
     targetPort: 80
   selector:
-    app: click-py
+    app: guess-the-number-py
