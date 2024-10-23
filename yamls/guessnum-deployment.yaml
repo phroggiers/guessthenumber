@@ -3,11 +3,11 @@ kind: Deployment
 metadata:
   name: guessthenumber-py
 spec:
-  replicas: 1
+  replicas: 3
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: click-py
+      app: guessthenumber-py
   template:
     metadata:
       labels:
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: guessthenumber-py
-          image: python:latest
+          image: #your-duckerhub-username/guess-the-number:latest
           ports:
             - containerPort: 80
