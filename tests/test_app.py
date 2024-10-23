@@ -1,6 +1,6 @@
 # tests/test_app.py
 import pytest
-from app import guess_the_number
+from app import guess_the_number  # Import the function from app.py directly
 
 def test_guess_the_number():
     # This test only verifies that the function can be called.
