@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: guessthenumber-py
-          image: #your-duckerhub-username/guess-the-number:latest
+          image: phroggiers/guess-the-number:latest
           ports:
             - containerPort: 80
