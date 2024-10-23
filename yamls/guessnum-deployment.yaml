@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: click-py
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: click-py
+  template:
+    metadata:
+      labels:
+        app: click-py
+    spec:
+      containers:
+        - name: click-py
+          image: python:latest
+          ports:
+            - containerPort: 80
