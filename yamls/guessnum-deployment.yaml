@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: guessthenumber
-        image: phroggiers/guesss:v5
+        image: phroggiers/guessss:v6
         ports:
         - containerPort: 8080
         # Add a readiness probe to check if the app is ready
