@@ -16,18 +16,18 @@ spec:
       - name: guessthenumber
         image: phroggiers/guessie:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
         # Add a readiness probe to check if the app is ready
         readinessProbe:
           httpGet:
             path: /
-            port: 8080
+            port: 8000
           initialDelaySeconds: 5
           periodSeconds: 10
         # Add a liveness probe to check if the app is running
         livenessProbe:
           httpGet:
             path: /
-            port: 8080
+            port: 8000
           initialDelaySeconds: 15
           periodSeconds: 20
